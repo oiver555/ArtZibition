@@ -12,41 +12,11 @@ import painting_06 from './painting_06.jpeg'
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import SVGChat from './SVG_Chat.js';
-import { useControls } from 'leva';
+
 
 function App() {
-  const { positionX, positionY, positionZ, fov, far, near, zoom } = useControls({
-    positionX: {
-        step: 1,
-        value: 0,
 
-    },
-    positionY: {
-        step: 1,
-        value: 0
-    },
-    positionZ: {
-        step: 1,
-        value: 10
-    },
-    fov: {
-        step: 1,
-        value: 30
-    },
-    far: {
-        step: 1,
-        value: 100
-    },
-    near: {
-        step: 1,
-        value: 0.1
-    },
-    zoom: {
-        step: 1,
-        value: 0
-    },
-
-})
+  
 
   return (
     <div style={{ background: "rgb(20,20,20)", color: "white", height: '100vh', width: "100%", overflow: 'auto', fontFamily: "Inter" }} >

@@ -1,43 +1,9 @@
-import { useFrame, useThree, } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { useFrame, } from "@react-three/fiber";
+import {  useRef } from "react";
 import * as THREE from "three"
-import { useControls } from 'leva'
 
 const Hero = (props) => {
     const meshRef = useRef()
-    const { positionX, positionY, positionZ, fov, far, near, zoom } = useControls({
-        positionX: {
-            step: 1,
-            value: 0,
-
-        },
-        positionY: {
-            step: 1,
-            value: 0
-        },
-        positionZ: {
-            step: 1,
-            value: 10
-        },
-        fov: {
-            step: 1,
-            value: 40
-        },
-        far: {
-            step: 1,
-            value: 100
-        },
-        near: {
-            step: 1,
-            value: 0.1
-        },
-        zoom: {
-            step: 1,
-            value: 0
-        },
-
-    })
-    const { camera } = useThree()
 
     useFrame((scene) => {
 
@@ -57,10 +23,6 @@ const Hero = (props) => {
         // scene.camera.aspect = 500 / window.innerWidth;
         // console.log(screenPos);
     })
-
-    useEffect(() => {
-        camera.updateProjectionMatrix()
-    }, [positionX, positionY, positionZ, fov, far, near, zoom])
 
     return (
 
